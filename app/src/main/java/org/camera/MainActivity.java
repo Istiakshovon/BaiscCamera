@@ -336,6 +336,23 @@ public class MainActivity extends AppCompatActivity {
             captureBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
 
 
+            if (filter==1){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_AQUA);
+            }else if (filter==2){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_BLACKBOARD);
+            }else if(filter==3){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_WHITEBOARD);
+            }else if (filter==4){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_SEPIA);
+            }else if (filter==5){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_NEGATIVE);
+            }else if (filter==6){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_MONO);
+            }else if (filter==0){
+                captureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, null);
+            }
+
+
 
             // Orientation
             int rotation = getWindowManager().getDefaultDisplay().getRotation();
@@ -463,8 +480,6 @@ public class MainActivity extends AppCompatActivity {
         }
         captureRequestBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
 
-//        GRAY
-
         if (filter==1){
             captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_AQUA);
         }else if (filter==2){
@@ -477,12 +492,10 @@ public class MainActivity extends AppCompatActivity {
             captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_NEGATIVE);
         }else if (filter==6){
             captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_MONO);
-        }else if (filter==7){
-            captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_SCENE_MODE_FACE_PRIORITY);
         }else if (filter==0){
             captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, null);
         }
-        
+
 //        captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_MONO);
 //        captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_AQUA);
 //        captureRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CameraMetadata.CONTROL_EFFECT_MODE_BLACKBOARD);
